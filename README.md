@@ -16,8 +16,8 @@ in this server you must upload ```client.php```
 
 Run client.php and then get response from <b>Server 1</b> in Server 1 check requests and return response 
 
-in client.php print "How Are you ?"
+in client.php print \"How Are you ?\"
 
 Print the text above The review has been completed successfully 
 
-
+###Note : Edit ```Client.php``` , ```wsdl.wsdl``` find <b>example.com</b> and set your URL site
