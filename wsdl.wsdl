@@ -30,7 +30,7 @@
     <wsdl:binding name="SoapData" type="tns:SoapData">
         <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
         <wsdl:operation name="soap_run">
-            <soap:operation soapAction="https://cheetah-tool.com/soap/server.php"/>
+            <soap:operation soapAction="https://example.com/soap/server.php"/>
             <wsdl:input>
                 <soap:body use="literal" namespace="SoapData"/>
             </wsdl:input>
@@ -43,7 +43,7 @@
 	
     <wsdl:service name="SoapData">
         <wsdl:port binding="tns:SoapData" name="soap">
-            <soap:address location="https://cheetah-tool.com/soap/server.php"/>
+            <soap:address location="https://example.com/soap/server.php"/>
         </wsdl:port>
     </wsdl:service>
 
