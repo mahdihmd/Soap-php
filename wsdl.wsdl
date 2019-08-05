@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<wsdl:definitions name="Library"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  targetNamespace="Library"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:tns="Library"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+
+    <xsd:documentation>Test Soap With WSDL</xsd:documentation>
+
+	
+    <message name="getSoapRequest">
+        <part name="arg" type="string" />
+    </message>
+
+    <message name="getSoapResponse">
+        <part name="return" type="string" />
+    </message>
+
+	
+    <wsdl:portType name="SoapData">
+        <wsdl:operation name="soap_run">
+            <wsdl:input message="tns:getSoapRequest"/>
+            <wsdl:output message="tns:getSoapResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+
+    <wsdl:binding name="SoapData" type="tns:SoapData">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="soap_run">
+            <soap:operation soapAction="https://cheetah-tool.com/soap/server.php"/>
+            <wsdl:input>
+                <soap:body use="literal" namespace="SoapData"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" namespace="SoapData"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+	
+    <wsdl:service name="SoapData">
+        <wsdl:port binding="tns:SoapData" name="soap">
+            <soap:address location="https://cheetah-tool.com/soap/server.php"/>
+        </wsdl:port>
+    </wsdl:service>
+
+	
+</wsdl:definitions>
+
+
+
+
+
